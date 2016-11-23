@@ -1,2 +1,2 @@
 # coursera-angularJS
-COursera Angular JS course
+Coursera Angular JS course
