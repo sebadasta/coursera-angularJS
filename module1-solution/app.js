@@ -24,7 +24,7 @@ $scope.CheckLunch = function () {
 
   for (var i = 0; i < foodArray.length; i++) {
 
-  if (foodArray[i].length <1) {
+  if (foodArray[i].length ==0) {
 
     //Do nothing
 
@@ -36,7 +36,7 @@ $scope.CheckLunch = function () {
 
 }
 
-if ($scope.foodList.length == 0) {
+if ($scope.foodList.length == 0 || $scope.foodCount == 0 ) {
 
   $scope.message = "Please enter data first";
 
