@@ -7,8 +7,23 @@
   <script src="app.js" charset="utf-8"></script>
     <title>Calculator</title>
   </head>
-  <body>
-    <h1>header papa!</h1>
+  <body ng-app="NameCalculator">
+    <h1>Name Calculator</h1>
+
+<div ng-controller="NameCalculatorController">
+
+<div>
+Your Name:
+<input type="text" ng-model="name" ng-keyup="DisplayNumeric();">
+
+
+</div>
+
+<div> Your Value is: {{totalValue}} </div>
+
+
+</div>
+
 
     </body>
 
