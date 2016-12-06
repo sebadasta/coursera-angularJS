@@ -13,7 +13,14 @@ $scope.foodList = "" ;
 var foodArray = [];
 $scope.foodCount = 0;
 $scope.message = "";
+$scope.headerColor = 'red';
+$scope.backColor = {'color':$scope.headerColor};
 
+  $scope.setColor = function() {
+$scope.headerColor = 'green';
+$scope.backColor = {'color':$scope.headerColor};
+
+  };
 
 $scope.CheckLunch = function () {
 
@@ -39,6 +46,8 @@ $scope.CheckLunch = function () {
 if ($scope.foodList.length == 0 || $scope.foodCount == 0 ) {
 
   $scope.message = "Please enter data first";
+
+
 
     } else {
 

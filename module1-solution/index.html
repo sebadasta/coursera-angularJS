@@ -28,7 +28,9 @@
 
          <div class="form-group message">
            <!-- Your message can go here. -->
-{{message}}
+           <p ng-model="headerColor" ng-style="backColor" ng-change="setColor()">{{message}}</p>
+           {{headerColor}}
+
 
          </div>
 

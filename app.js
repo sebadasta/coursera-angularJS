@@ -1,52 +1,48 @@
 (function () {
+'use strict';
 
-'use stric';
+var shoppingList = [
+  {
+    name: "Milk",
+    quantity: "2"
+  },
+  {
+    name: "",
+    quantity: ""
+  },
+  {
+    name: "Donuts",
+    quantity: "200"
+  }
+];
 
-angular.module('NameCalculator', [])
 
-.controller('NameCalculatorController', function ($scope, $filter){
+angular.module('MsgApp', ['ngAnimate'])
+.controller('MsgController', MsgController)
 
-$scope.name = "";
+MsgController.$inject = ['$scope'];
+function MsgController($scope) {
 
-$scope.totalValue = 0;
+$scope.list = shoppingList;
+$scope.newItem = "";
 
-$scope.DisplayNumeric = function (){
+$scope.addToList = function(){
 
-var TotalNameValue = CalculateFromString($scope.name);
+var newitemList = {
+      name: $scope.newItem,
+      quantity: "0"
+    };
 
-$scope.totalValue = TotalNameValue;
+    if ($scope.newItem != "") {
+      $scope.list.push(newitemList);
+      $scope.newItem = "";
 
+    }
 };
 
-function CalculateFromString(string){
-
-var totalStringValue = 0;
-
-for (var i = 0; i < string.length; i++) {
-  totalStringValue += string.charCodeAt(i);
-}
-return totalStringValue;
 
 }
+//Outside controller
 
-$scope.upper = function(){
-
-var upCase = $filter('uppercase');
-$scope.name = upCase($scope.name);
-
-var TotalNameValue = CalculateFromString($scope.name);
-$scope.totalValue = TotalNameValue;
-
-
-};
-
-
-
-
-
-
-
-
-});
 
 })();
